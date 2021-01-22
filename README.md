@@ -1,2 +1,1 @@
-# getting-started
-nuFunction Getting Started
+# nuFunction Getting Started
