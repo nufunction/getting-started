@@ -14,11 +14,11 @@ Response handler(Json &request)
     auto parameters = request["queryParameters"];
     String greeting = "Hello";
     if ( parameters.hasKey("greeting") ) {
-        greeting = request["queryParameters"]["greeting"].asArray()[0].asString();
+        greeting = request["queryParameters"]["greeting"][0].asString();
     }
     String who = "World";
     if ( parameters.hasKey("who") ) {
-        who = request["queryParameters"]["who"].asArray()[0].asString();
+        who = request["queryParameters"]["who"][0].asString();
     }
     return greeting + " " + who + "!";
 }
