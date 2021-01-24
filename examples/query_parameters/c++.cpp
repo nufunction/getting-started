@@ -12,13 +12,13 @@ using namespace nufunction;
 Response handler(Json &request)
 {
     auto parameters = request["queryParameters"];
-    auto greeting = "Hello";
+    String greeting = "Hello";
     if ( parameters.hasKey("greeting") ) {
-        greeting = request["queryParameters"]["greeting"][0].asStrin();
+        greeting = request["queryParameters"]["greeting"].asArray()[0].asString();
     }
-    auto who = "World";
+    String who = "World";
     if ( parameters.hasKey("who") ) {
-        who = request["queryParameters"]["who"][0].asString();
+        who = request["queryParameters"]["who"].asArray()[0].asString();
     }
     return greeting + " " + who + "!";
 }
